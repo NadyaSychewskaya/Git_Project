@@ -6,6 +6,7 @@
 
 
 while True:
+
     try:
         a = float(input('Введите 1-ое число'))
         b = float(input('Введите 2-ое число'))
