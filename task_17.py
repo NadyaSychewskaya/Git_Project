@@ -5,16 +5,16 @@
 
 
 
-def divide():
+def divide(a, b):
     return a / b
 
-def multiply():
+def multiply(a, b):
     return a * b
 
-def plus():
+def plus(a, b):
     return a + b
 
-def minus():
+def minus(a, b):
     return a - b
 
 while True:
@@ -24,13 +24,15 @@ while True:
         action = input('Введите операцию: + - * /')
 
         if action == '/':
-            print(divide())
+            print(divide(a, b))
         elif action == '*':
-            print(multiply())
+            print(multiply(a, b))
         elif action == '+':
-            print(plus())
+            print(plus(a, b))
         elif action == '-':
-            print(minus())
+            print(minus(a, b))
+        else:
+            print("Такая операция не поддерживается!")
 
     except ValueError:
         print("Это не число!")
