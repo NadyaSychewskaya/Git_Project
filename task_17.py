@@ -11,22 +11,25 @@ while True:
         b = float(input('Введите 2-ое число'))
         action = input('Введите операцию: + - * /')
 
-
         if action == '/':
-            result = float(a / b)
-            print(f"{a} / {b} = {result}")
+            def divide():
+                return a / b
+            print(divide())
 
         elif action == '*':
-            result = float(a * b)
-            print(f"{a} * {b} = {result}")
+            def multiply():
+                return a * b
+            print(multiply())
 
         elif action == '+':
-            result = float(a + b)
-            print(f"{a} + {b} = {result}")
+            def plus():
+                return a + b
+            print(plus())
 
         elif action == '-':
-            result = float(a - b)
-            print(f"{a} - {b} = {result}")
+            def minus():
+                return a - b
+            print(minus())
 
     except ValueError:
         print("Это не число!")
