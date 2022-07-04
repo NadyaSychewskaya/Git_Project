@@ -113,7 +113,6 @@ class Gardener(TomatoBush, Tomato):
         else:
             print("Not all tomatoes are ripe")
 
-
     @staticmethod
     def knowledge_base():
         return (Tomato.states)
