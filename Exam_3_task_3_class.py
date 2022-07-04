@@ -77,7 +77,6 @@ class TomatoBush(Tomato):
         if quantity:
             self.tomatoes.append(quantity)
 
-
     def grow_all(self, tomatoes):
         """будет переводить все объекты из списка томатов на следующий этап созревания"""
         super().__init__(self, state, index)
