@@ -14,19 +14,20 @@ class Tomato:
     }
 
     harvesting_state = 4
+    final_state = 8
 
     def __init__(self):
         self._state = 0
 
     # Переход к следующей стадии созревания
     def grow(self):
-        if self._state < self.harvesting_state:
+        if self._state <= self.final_state:
             self._state += 1
         self._print_state()
 
     # Проверка, созрел ли томат
     def is_ripe(self):
-        if self._state == self.harvesting_state:
+        if self._state >= self.harvesting_state:
             return True
         return False
 
@@ -52,7 +53,7 @@ class Gardener:
     def harvest(self):
         print('Gardener is harvesting...')
         if self._plant.is_ripe():
-            print('Harvesting is finished')
+            print('Plant is ready to be harvested.')
         else:
             print('Too early! Your plant is green and not ripe.')
 
@@ -70,6 +71,8 @@ the tomato can be harvested and ripened off the vine with no loss of flavor, qua
 Gardener.knowledge_base()
 tomato = Tomato()
 gardener = Gardener(name='Nadya', plant=tomato)
+gardener.work()
+gardener.harvest()
 gardener.work()
 gardener.harvest()
 gardener.work()
