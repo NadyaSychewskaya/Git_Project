@@ -21,7 +21,7 @@ class Tomato:
 
     # Переход к следующей стадии созревания
     def grow(self):
-        if self._state <= self.final_state:
+        if self._state < self.final_state:
             self._state += 1
         self._print_state()
 
@@ -71,6 +71,10 @@ the tomato can be harvested and ripened off the vine with no loss of flavor, qua
 Gardener.knowledge_base()
 tomato = Tomato()
 gardener = Gardener(name='Nadya', plant=tomato)
+gardener.work()
+gardener.harvest()
+gardener.work()
+gardener.harvest()
 gardener.work()
 gardener.harvest()
 gardener.work()
