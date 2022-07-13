@@ -16,22 +16,20 @@ a = [1, 2, 3, 4, "one", "two", "three", "four"]
 text = []
 num = []
 
-
 for i in a:
     if type(i) is str:
         text.append(i)
-        cursor.execute('''INSERT INTO table_text(col_1) VALUES (?)''', (i))
         n = len(i)
         num.append(n)
-        cursor.execute('''INSERT INTO table_num(col_1) VALUES (?)''', (n))
 
     elif type(i) is int:
         if int(i) % 2 == 0:
             num.append(i)
-            cursor.execute('''INSERT INTO table_num(col_1) VALUES (?)''', (i))
         else:
             text.append("odd")
-            cursor.execute('''INSERT INTO table_text(col_1) VALUES ("odd")''')
+
+cursor.execute('''INSERT INTO table_text(col_1) VALUES (?)''', (text))
+cursor.execute('''INSERT INTO table_num(col_1) VALUES (?)''', (num))
 
 
 if len(num) < 5:
