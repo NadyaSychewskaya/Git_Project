@@ -28,8 +28,9 @@ for i in a:
         else:
             text.append("odd")
 
-cursor.execute('''INSERT INTO table_text(col_1) VALUES (?)''', (text))
-cursor.execute('''INSERT INTO table_num(col_1) VALUES (?)''', (num))
+
+cursor.execute('''INSERT INTO table_text(col_1) VALUES (?)''', (text, ))
+cursor.execute('''INSERT INTO table_num(col_1) VALUES (?)''', (num, ))
 
 
 if len(num) < 5:
